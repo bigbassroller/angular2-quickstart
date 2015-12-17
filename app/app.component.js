@@ -9,7 +9,7 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var AppComponent, HEROES;
     return {
         setters:[
             function (core_1_1) {
@@ -19,21 +19,32 @@ System.register(['angular2/core'], function(exports_1) {
             AppComponent = (function () {
                 function AppComponent() {
                     this.title = 'Tour of Heroes';
-                    this.hero = {
-                        id: 1,
-                        name: 'Windstorm'
-                    };
+                    this.heroes = HEROES;
                 }
+                AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n      <h1>{{title}}</h1>\n      <h2>{{hero.name}} details!</h2>\n      <div><label>id: </label>{{hero.id}}</div>\n      <div>\n        <label>name: </label>\n        <div><input [(ngModel)]=\"hero.name\" placeholder=\"name\"></div>\n      </div>\n      "
+                        template: "\n      <h1>{{title}}</h1>\n\t    <h2>My Heroes</h2>\n\t    <ul class=\"heroes\">\n\t      <li *ngFor=\"#hero of heroes\" [class.selected]=\"hero === selectedHero\" (click)=\"onSelect(hero)\">\n\t        <span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n\t      </li>\n\t    </ul>\n\t\t\t<div *ngIf=\"selectedHero\">\n\t\t    <h2>{{selectedHero.name}} details!</h2>\n\t\t    <div><label>id: </label>{{selectedHero.id}}</div>\n\t\t    <div>\n\t\t        <label>name: </label>\n\t\t        <input [(ngModel)]=\"selectedHero.name\" placeholder=\"name\"/>\n\t\t    </div>\n\t\t\t</div>\n      ",
+                        styles: ["\n      .heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}\n      .heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }\n      .heroes li:hover {color: #369; background-color: #EEE; left: .2em;}\n      .heroes .badge {\n        font-size: small;\n        color: white;\n        padding: 0.1em 0.7em;\n        background-color: #369;\n        line-height: 1em;\n        position: relative;\n        left: -1px;\n        top: -1px;\n      }\n      .selected { background-color: #EEE; color: #369; }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             })();
             exports_1("AppComponent", AppComponent);
+            HEROES = [
+                { "id": 11, "name": "Mr. Nice" },
+                { "id": 12, "name": "Narco" },
+                { "id": 13, "name": "Bombasto" },
+                { "id": 14, "name": "Celeritas" },
+                { "id": 15, "name": "Magneta" },
+                { "id": 16, "name": "RubberMan" },
+                { "id": 17, "name": "Dynama" },
+                { "id": 18, "name": "Dr IQ" },
+                { "id": 19, "name": "Magma" },
+                { "id": 20, "name": "Tornado" }
+            ];
         }
     }
 });
