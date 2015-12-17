@@ -1,0 +1,26 @@
+{
+  "name": "angular2-quickstart",
+  "version": "1.0.0",
+  "description": "Angular 2 Quickstart tutorial https://angular.io/docs/ts/latest/quickstart.html",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigbassroller/angular2-quickstart.git"
+  },
+  "keywords": [
+    "Angular",
+    "2",
+    "ng2",
+    "hello",
+    "world"
+  ],
+  "author": "Michael Chavez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigbassroller/angular2-quickstart/issues"
+  },
+  "homepage": "https://github.com/bigbassroller/angular2-quickstart#readme"
+}
